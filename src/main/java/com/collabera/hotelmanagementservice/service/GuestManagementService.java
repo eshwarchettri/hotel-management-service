@@ -5,6 +5,7 @@ import com.collabera.hotelmanagementservice.sharedobject.GuestSharedObject;
 import java.util.List;
 
 public interface GuestManagementService {
-    public List<GuestSharedObject> getGuestDetails();
+     List<GuestSharedObject> getGuestDetails();
+     void saveGuest(GuestSharedObject guestSharedObject);
 
 }

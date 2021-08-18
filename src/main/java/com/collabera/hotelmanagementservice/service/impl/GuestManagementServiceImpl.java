@@ -14,7 +14,7 @@ import java.util.List;
 public class GuestManagementServiceImpl implements GuestManagementService {
     @Value("${guest.service.url}")
     private String guestServiceUrl;
-    private RestTemplateService restTemplateService;
+    private final RestTemplateService restTemplateService;
 
     public GuestManagementServiceImpl(RestTemplateService restTemplateService) {
         this.restTemplateService = restTemplateService;
@@ -23,9 +23,18 @@ public class GuestManagementServiceImpl implements GuestManagementService {
     @Override
     public List<GuestSharedObject> getGuestDetails() {
         String url = guestServiceUrl + "guests";
-        return  restTemplateService.exchangeWithParameterizedTypeReference(url, HttpMethod.GET, new ParameterizedTypeReference<List<GuestSharedObject>>() {
-        }, null);
+        return restTemplateService.exchangeWithParameterizedTypeReference(url, HttpMethod.GET, new ParameterizedTypeReference<List<GuestSharedObject>>() {
+        }, (Object) null);
 
+    }
+
+    @Override
+    public void saveGuest(GuestSharedObject guestSharedObject) {
+
+
+        String url = guestServiceUrl + "save-guest";
+        restTemplateService.exchange(url, HttpMethod.POST, restTemplateService.entity(guestSharedObject),
+                GuestSharedObject.class, (Object) null);
     }
 
 }
