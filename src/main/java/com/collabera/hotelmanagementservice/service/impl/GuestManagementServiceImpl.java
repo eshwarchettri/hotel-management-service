@@ -37,4 +37,11 @@ public class GuestManagementServiceImpl implements GuestManagementService {
                 GuestSharedObject.class, (Object) null);
     }
 
+    @Override
+    public void deleteGuest(String id) {
+        String url = guestServiceUrl + "delete-guest/{id}";
+        restTemplateService.exchange(url, HttpMethod.DELETE, null,
+                null, id);
+    }
+
 }

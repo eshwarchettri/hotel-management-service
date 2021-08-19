@@ -24,4 +24,9 @@ public class GuestServiceController {
         guestManagementService.saveGuest(guestSharedObject);
     }
 
+    @DeleteMapping("/delete-guest/{id}")
+    public void deleteGuest(@PathVariable("id") String id) {
+        guestManagementService.deleteGuest(id);
+    }
+
 }

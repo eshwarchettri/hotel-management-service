@@ -8,4 +8,5 @@ public interface GuestManagementService {
      List<GuestSharedObject> getGuestDetails();
      void saveGuest(GuestSharedObject guestSharedObject);
 
+     void deleteGuest(String id);
 }
