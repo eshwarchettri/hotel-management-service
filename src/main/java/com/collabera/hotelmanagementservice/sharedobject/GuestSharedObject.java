@@ -9,39 +9,23 @@ import java.time.LocalDateTime;
 
 public class GuestSharedObject {
     private String guestId;
-
     private String guestFirstName;
-
     private String guestLastName;
     private LocalDateTime checkinDateTime;
     private LocalDateTime checkoutDateTime;
     private RoomSharedObject room;
-    private Boolean isDeleted=false;
+    private Boolean isDeleted = false;
     private Long zipCode;
-
     private String firstAddress;
-  //  @Enumerated(EnumType.STRING)
     private RoomPreferencesEnum roomPreferences;
-
     private String secondAddress;
-
-
     private String city;
-
-
     private String phone;
-
-
     private String specialInstruction;
-
-
     private String email;
-
     private Integer adults;
-
-
+    private String state;
     private Integer children;
-
 
 
 }

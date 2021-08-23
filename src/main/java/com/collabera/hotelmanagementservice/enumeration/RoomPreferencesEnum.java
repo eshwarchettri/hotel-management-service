@@ -1,12 +1,18 @@
 package com.collabera.hotelmanagementservice.enumeration;
 
+import lombok.Getter;
+
 public enum RoomPreferencesEnum {
-    STANDARD("standard"),
-    DELUX("delux"),
-    SUITE("suite");
-    private String value;
+    standard("STANDARD"),
+    delux("DELUX"),
+    suite("SUITE");
+
+    @Getter
+    private final String value;
 
     RoomPreferencesEnum(String value) {
         this.value = value;
     }
+
+
 }

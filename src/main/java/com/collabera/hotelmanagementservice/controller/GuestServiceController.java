@@ -29,4 +29,9 @@ public class GuestServiceController {
         guestManagementService.deleteGuest(id);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<GuestSharedObject> getGuestDetail(@PathVariable("id") String id) {
+        return ResponseEntity.ok(guestManagementService.getDetailById(id));
+    }
+
 }
