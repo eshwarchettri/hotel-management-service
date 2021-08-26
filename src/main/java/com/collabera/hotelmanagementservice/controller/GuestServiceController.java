@@ -25,8 +25,8 @@ public class GuestServiceController {
     }
 
     @DeleteMapping("/delete-guest/{id}")
-    public void deleteGuest(@PathVariable("id") String id) {
-        guestManagementService.deleteGuest(id);
+    public void deleteGuest(@PathVariable("id") String id, @RequestParam(name = "reasonForDelete") String reasonForDelete ) {
+        guestManagementService.deleteGuest(id, reasonForDelete);
     }
 
     @GetMapping("/{id}")
