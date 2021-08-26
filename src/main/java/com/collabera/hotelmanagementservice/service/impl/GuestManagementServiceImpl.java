@@ -39,10 +39,10 @@ public class GuestManagementServiceImpl implements GuestManagementService {
     }
 
     @Override
-    public void deleteGuest(String id) {
-        String url = guestServiceUrl + "delete-guest/{id}";
+    public void deleteGuest(String id, String reasonForDelete) {
+        String url = guestServiceUrl + "delete-guest/{id}?reasonForDelete={reasonForDelete}";
         restTemplateService.exchange(url, HttpMethod.DELETE, null,
-                null, id);
+                null, id, reasonForDelete);
     }
 
     @Override

@@ -9,7 +9,7 @@ public interface GuestManagementService {
      List<GuestSharedObject> getGuestDetails();
      void saveGuest(GuestSharedObject guestSharedObject);
 
-     void deleteGuest(String id);
+     void deleteGuest(String id,String resonForDelete);
 
      GuestSharedObject getDetailById(String id);
 }

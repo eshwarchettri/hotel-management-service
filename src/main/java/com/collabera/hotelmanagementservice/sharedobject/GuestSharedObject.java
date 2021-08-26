@@ -26,6 +26,7 @@ public class GuestSharedObject {
     private Integer adults;
     private String state;
     private Integer children;
+    private String reasonToDelete;
 
 
 }
