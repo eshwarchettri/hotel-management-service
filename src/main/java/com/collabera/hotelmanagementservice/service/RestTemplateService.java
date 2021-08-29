@@ -1,5 +1,6 @@
 package com.collabera.hotelmanagementservice.service;
 
+import com.collabera.hotelmanagementservice.config.RestResponsePage;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -8,8 +9,8 @@ import java.util.List;
 
 public interface RestTemplateService {
 
-    <T> List<T> exchangeWithParameterizedTypeReference(final String path, final HttpMethod method,
-                                                       ParameterizedTypeReference<List<T>> responseType,
+    <T> RestResponsePage<T> exchangeWithParameterizedTypeReference(final String path, final HttpMethod method,
+                                                       ParameterizedTypeReference<RestResponsePage<T>> responseType,
 
                                                        Object... uriVariables);
 

@@ -1,5 +1,6 @@
 package com.collabera.hotelmanagementservice.controller;
 
+import com.collabera.hotelmanagementservice.config.RestResponsePage;
 import com.collabera.hotelmanagementservice.service.GuestManagementService;
 import com.collabera.hotelmanagementservice.sharedobject.GuestSharedObject;
 import lombok.AllArgsConstructor;
@@ -12,11 +13,13 @@ import java.util.List;
 @RequestMapping("/guests")
 @AllArgsConstructor
 public class GuestServiceController {
-    private GuestManagementService guestManagementService;
+    private final GuestManagementService guestManagementService;
 
     @GetMapping("")
-    public ResponseEntity<List<GuestSharedObject>> getAllGuests() {
-        return ResponseEntity.ok(guestManagementService.getGuestDetails());
+    public ResponseEntity<RestResponsePage<GuestSharedObject>> getAllGuests(@RequestParam(name = "page", defaultValue = "0") Integer pageNo,
+                                                                            @RequestParam(name = "size", defaultValue = "10") Integer pageSize,
+                                                                            @RequestParam(name = "sort", defaultValue = "id") String sortBy) {
+        return ResponseEntity.ok(guestManagementService.getGuestDetails( pageNo, pageSize, sortBy));
     }
 
     @PostMapping("/save-guest")
@@ -25,7 +28,7 @@ public class GuestServiceController {
     }
 
     @DeleteMapping("/delete-guest/{id}")
-    public void deleteGuest(@PathVariable("id") String id, @RequestParam(name = "reasonForDelete") String reasonForDelete ) {
+    public void deleteGuest(@PathVariable("id") String id, @RequestParam(name = "reasonForDelete", required = false) String reasonForDelete ) {
         guestManagementService.deleteGuest(id, reasonForDelete);
     }
 

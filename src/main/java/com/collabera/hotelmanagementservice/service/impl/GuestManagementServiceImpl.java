@@ -1,10 +1,12 @@
 package com.collabera.hotelmanagementservice.service.impl;
 
+import com.collabera.hotelmanagementservice.config.RestResponsePage;
 import com.collabera.hotelmanagementservice.service.GuestManagementService;
 import com.collabera.hotelmanagementservice.service.RestTemplateService;
 import com.collabera.hotelmanagementservice.sharedobject.GuestSharedObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -22,10 +24,11 @@ public class GuestManagementServiceImpl implements GuestManagementService {
     }
 
     @Override
-    public List<GuestSharedObject> getGuestDetails() {
-        String url = guestServiceUrl + "guests";
-        return restTemplateService.exchangeWithParameterizedTypeReference(url, HttpMethod.GET, new ParameterizedTypeReference<List<GuestSharedObject>>() {
-        }, (Object) null);
+    public RestResponsePage<GuestSharedObject> getGuestDetails(Integer pageNo, Integer pageSize, String sortBy) {
+        String url = guestServiceUrl + "guests?sort="+sortBy+"&page="+pageNo+"&size="+pageSize;
+        ParameterizedTypeReference<RestResponsePage<GuestSharedObject>> responseType = new ParameterizedTypeReference<RestResponsePage<GuestSharedObject>>() { };
+
+        return restTemplateService.exchangeWithParameterizedTypeReference(url, HttpMethod.GET, responseType, (Object) null);
 
     }
 

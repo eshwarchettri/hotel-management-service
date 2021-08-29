@@ -1,5 +1,6 @@
 package com.collabera.hotelmanagementservice.service.impl;
 
+import com.collabera.hotelmanagementservice.config.RestResponsePage;
 import com.collabera.hotelmanagementservice.service.RestTemplateService;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
@@ -15,10 +16,10 @@ public class RestTemplateServiceImpl implements RestTemplateService {
     static RestTemplate restTemplate = new RestTemplate();
 
     @Override
-    public <T> List<T> exchangeWithParameterizedTypeReference(String path, HttpMethod method,
-                                                              ParameterizedTypeReference<List<T>> responseType, Object... uriVariables) {
+    public <T> RestResponsePage<T> exchangeWithParameterizedTypeReference(String path, HttpMethod method,
+                                                              ParameterizedTypeReference<RestResponsePage<T>> responseType, Object... uriVariables) {
         try {
-            final ResponseEntity<List<T>> response = restTemplate.exchange(
+            final ResponseEntity<RestResponsePage<T>> response = restTemplate.exchange(
                     path,
                     method,
                     null,
