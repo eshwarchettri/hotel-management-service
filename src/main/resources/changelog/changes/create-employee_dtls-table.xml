@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="meghna" id="01092021-1A">
+        <createTable tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="EMPLOYEE_NAME" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="EMPLOYEE_PASSWORD" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="EMAIL_ID" type="varchar(35)">
+                    <constraints nullable="false"/>
+                </column>
+                <column name="PHONE_NUMBER" type="varchar(10)">
+                    <constraints nullable="false"/>
+                </column>
+            <column name="PRIVILEGE_TYPE" type="varchar(5)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

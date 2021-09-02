@@ -18,7 +18,7 @@ public class GuestServiceController {
     @GetMapping("")
     public ResponseEntity<RestResponsePage<GuestSharedObject>> getAllGuests(@RequestParam(name = "page", defaultValue = "0") Integer pageNo,
                                                                             @RequestParam(name = "size", defaultValue = "10") Integer pageSize,
-                                                                            @RequestParam(name = "sort", defaultValue = "id") String sortBy) {
+                                                                            @RequestParam(name = "sort", defaultValue = "guestLastName") String sortBy) {
         return ResponseEntity.ok(guestManagementService.getGuestDetails( pageNo, pageSize, sortBy));
     }
 
@@ -35,6 +35,10 @@ public class GuestServiceController {
     @GetMapping("/{id}")
     public ResponseEntity<GuestSharedObject> getGuestDetail(@PathVariable("id") String id) {
         return ResponseEntity.ok(guestManagementService.getDetailById(id));
+    }
+    @PutMapping("/guest-checkin/{id}")
+    public void guestCheckIn(@PathVariable("id")String id){
+        guestManagementService.guestCheckIn( id);
     }
 
 }

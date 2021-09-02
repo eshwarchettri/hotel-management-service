@@ -14,4 +14,7 @@ public interface GuestManagementService {
      void deleteGuest(String id,String resonForDelete);
 
      GuestSharedObject getDetailById(String id);
+
+     void guestCheckIn( String id);
+
 }

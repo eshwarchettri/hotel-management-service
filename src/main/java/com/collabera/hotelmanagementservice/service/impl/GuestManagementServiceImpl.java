@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -54,5 +53,11 @@ public class GuestManagementServiceImpl implements GuestManagementService {
         return restTemplateService.exchange(url, HttpMethod.GET, null, GuestSharedObject.class, id);
     }
 
+    @Override
+    public void guestCheckIn( String id) {
+        String url = guestServiceUrl + "/guest-checkin/{id}";
+        restTemplateService.exchange(url, HttpMethod.PUT, null,null, id);
+
+    }
 
 }
