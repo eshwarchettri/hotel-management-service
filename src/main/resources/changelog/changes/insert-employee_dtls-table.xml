@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet author="meghna" id="01092021">
+        <insert tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" value="1"/>
+            <column name="EMPLOYEE_NAME" value="Eshwar"/>
+            <column name="EMPLOYEE_PASSWORD" value="eshwar123"/>
+            <column name="EMPLOYEE_ID" value="1"/>
+            <column name="EMPLOYEE_NAME" value="Eshwar"/>
+            <column name="EMAIL_ID" value="eshwar@gmail.com"/>
+            <column name="PHONE_NUMBER" value="8906454321"/>
+            <column name="PRIVILEGE_TYPE" value="ADMIN"/>
+        </insert>
+
+        <insert tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" value="2"/>
+            <column name="EMPLOYEE_NAME" value="Meghna"/>
+            <column name="EMPLOYEE_PASSWORD" value="meghna123"/>
+            <column name="EMAIL_ID" value="meghna@gmail.com"/>
+            <column name="PHONE_NUMBER" value="7807654321"/>
+            <column name="PRIVILEGE_TYPE" value="ADMIN"/>
+
+        </insert>
+
+        <insert tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" value="3"/>
+            <column name="EMPLOYEE_NAME" value="Mohit"/>
+            <column name="EMPLOYEE_PASSWORD" value="mohit123"/>
+            <column name="EMAIL_ID" value="mohit@gmail.com"/>
+            <column name="PHONE_NUMBER" value="6807654321"/>
+            <column name="PRIVILEGE_TYPE" value="USER"/>
+
+        </insert>
+        <insert tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" value="4"/>
+            <column name="EMPLOYEE_NAME" value="Sonam"/>
+            <column name="EMPLOYEE_PASSWORD" value="sonam123"/>
+            <column name="EMAIL_ID" value="sonam@gmail.com"/>
+            <column name="PHONE_NUMBER" value="9707654321"/>
+            <column name="PRIVILEGE_TYPE" value="USER"/>
+
+        </insert>
+
+        <insert tableName="EMPLOYEE_DETAILS">
+
+            <column name="EMPLOYEE_ID" value="5"/>
+            <column name="EMPLOYEE_NAME" value="Dev"/>
+            <column name="EMPLOYEE_PASSWORD" value="dev123"/>
+            <column name="EMAIL_ID" value="dev@gmail.com"/>
+            <column name="PHONE_NUMBER" value="9207654321"/>
+            <column name="PRIVILEGE_TYPE" value="USER"/>
+
+        </insert>
+
+
+    </changeSet>
+
+
+</databaseChangeLog>
