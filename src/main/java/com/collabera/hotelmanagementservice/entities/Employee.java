@@ -18,15 +18,18 @@ public class Employee {
     private String employeeName;
 
     @Column(name = "EMPLOYEE_PASSWORD")
-    private String employeePassword;
+    private String password;
 
     @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
 
-    @Column(name="EMAIL_ID")
+    @Column(name = "EMAIL_ID")
     private String emailId;
 
     @Column(name = "PRIVILEGE_TYPE")
     @Enumerated(EnumType.STRING)
     private Privilege privilege;
+
+    @Column(name = "IS_DELETED")
+    private Boolean isDeleted = false;
 }

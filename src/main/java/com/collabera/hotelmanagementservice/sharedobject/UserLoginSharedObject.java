@@ -8,7 +8,7 @@ import lombok.Data;
 public class UserLoginSharedObject {
     private String userName;
     private String password;
-    private Privilege privilege;
+
 
 
 }
