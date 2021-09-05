@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeRepository extends JpaRepository<Employee ,Long> {
-    Optional<Employee> findFirstByEmployeeNameIgnoreCaseAndEmployeePassword(String employeeName, String employeePassword);
+    Optional<Employee> findFirstByEmployeeNameIgnoreCaseAndPassword(String employeeName, String employeePassword);
 
     List<Employee> findAllByIsDeletedFalse();
 

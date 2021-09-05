@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Table(name = "EMPLOYEE_DETAILS")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "EMPLOYEE_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "EMPLOYEE_ID", nullable = false, updatable = false)
     private Long employeeId;
 
     @Column(name = "EMPLOYEE_NAME")

@@ -11,4 +11,5 @@ public interface EmployeeService {
 
     void updatePassword(EmployeeSharedObject employeeSharedObject, Long id);
 
+    void deleteEmployee(Long employeeId);
 }

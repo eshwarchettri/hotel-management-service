@@ -11,8 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeEntityTransformer {
     public Employee transfer(EmployeeSharedObject employeeSharedObject) {
-         EncryptionAndDecryption encryptionAndDecryption =new EncryptionAndDecryption();
-        employeeSharedObject.setPassword(encryptionAndDecryption.encrypt(employeeSharedObject.getPassword()));
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(employeeSharedObject, Employee.class);
     }

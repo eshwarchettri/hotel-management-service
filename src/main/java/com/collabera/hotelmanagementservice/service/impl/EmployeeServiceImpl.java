@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 @Service
 @AllArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
-    private EmployeeRepository employeeRepository;
-    private EmployeeEntityTransformer entityTransformer;
-    private EmployeeSharedObjectTransformer employeeSharedObjectTransformer;
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeEntityTransformer entityTransformer;
+    private final EmployeeSharedObjectTransformer employeeSharedObjectTransformer;
 
     @Override
     public void saveEmployee(EmployeeSharedObject employeeSharedObject) {
@@ -32,7 +32,20 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void updatePassword(EmployeeSharedObject employeeSharedObject, Long id) {
         employeeRepository.findById(id).ifPresent(employee -> {
-            employee.setPassword(employeeSharedObject.getPassword());
+            if (employee.getPassword().equals(employeeSharedObject.getPassword())) {
+                employee.setPassword(employeeSharedObject.getNewPassword());
+                employeeRepository.save(employee);
+            } else {
+                throw new RuntimeException("Current password doesn't match. ");
+            }
+
+        });
+    }
+
+    @Override
+    public void deleteEmployee(Long employeeId) {
+        employeeRepository.findById(employeeId).ifPresent(employee -> {
+            employee.setIsDeleted(true);
             employeeRepository.save(employee);
         });
     }

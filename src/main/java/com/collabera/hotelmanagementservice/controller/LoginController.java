@@ -1,5 +1,6 @@
 package com.collabera.hotelmanagementservice.controller;
 
+import com.collabera.hotelmanagementservice.reponse.LoginResponse;
 import com.collabera.hotelmanagementservice.service.LoginService;
 import com.collabera.hotelmanagementservice.sharedobject.EmployeeSharedObject;
 import com.collabera.hotelmanagementservice.sharedobject.UserLoginSharedObject;
@@ -16,8 +17,7 @@ public class LoginController {
     private final LoginService loginService;
 
     @PostMapping("/user-login")
-    private ResponseEntity<Boolean> authenticateUser(@RequestBody UserLoginSharedObject loginSharedObject) throws Exception {
-
+    private ResponseEntity<LoginResponse> authenticateUser(@RequestBody UserLoginSharedObject loginSharedObject) throws Exception {
 
         return ResponseEntity.ok(loginService.isValueUser(loginSharedObject));
 

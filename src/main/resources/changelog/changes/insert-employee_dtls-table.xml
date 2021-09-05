@@ -13,11 +13,11 @@
             <column name="EMPLOYEE_ID" value="1"/>
             <column name="EMPLOYEE_NAME" value="Eshwar"/>
             <column name="EMPLOYEE_PASSWORD" value="eshwar123"/>
-            <column name="EMPLOYEE_ID" value="1"/>
             <column name="EMPLOYEE_NAME" value="Eshwar"/>
             <column name="EMAIL_ID" value="eshwar@gmail.com"/>
             <column name="PHONE_NUMBER" value="8906454321"/>
             <column name="PRIVILEGE_TYPE" value="ADMIN"/>
+            <column name="IS_DELETED" value="false"/>
         </insert>
 
         <insert tableName="EMPLOYEE_DETAILS">
@@ -28,6 +28,7 @@
             <column name="EMAIL_ID" value="meghna@gmail.com"/>
             <column name="PHONE_NUMBER" value="7807654321"/>
             <column name="PRIVILEGE_TYPE" value="ADMIN"/>
+            <column name="IS_DELETED" value="false"/>
 
         </insert>
 
@@ -39,6 +40,7 @@
             <column name="EMAIL_ID" value="mohit@gmail.com"/>
             <column name="PHONE_NUMBER" value="6807654321"/>
             <column name="PRIVILEGE_TYPE" value="USER"/>
+            <column name="IS_DELETED" value="false"/>
 
         </insert>
         <insert tableName="EMPLOYEE_DETAILS">
@@ -49,6 +51,7 @@
             <column name="EMAIL_ID" value="sonam@gmail.com"/>
             <column name="PHONE_NUMBER" value="9707654321"/>
             <column name="PRIVILEGE_TYPE" value="USER"/>
+            <column name="IS_DELETED" value="false"/>
 
         </insert>
 
@@ -60,6 +63,7 @@
             <column name="EMAIL_ID" value="dev@gmail.com"/>
             <column name="PHONE_NUMBER" value="9207654321"/>
             <column name="PRIVILEGE_TYPE" value="USER"/>
+            <column name="IS_DELETED" value="false"/>
 
         </insert>
 

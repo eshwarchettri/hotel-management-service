@@ -21,13 +21,16 @@
             </column>
 
             <column name="EMAIL_ID" type="varchar(35)">
-                    <constraints nullable="false"/>
-                </column>
-                <column name="PHONE_NUMBER" type="varchar(10)">
-                    <constraints nullable="false"/>
-                </column>
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHONE_NUMBER" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
             <column name="PRIVILEGE_TYPE" type="varchar(5)">
                 <constraints nullable="false"/>
+            </column>
+
+            <column name="IS_DELETED" type="boolean" defaultValue="false">
             </column>
 
         </createTable>

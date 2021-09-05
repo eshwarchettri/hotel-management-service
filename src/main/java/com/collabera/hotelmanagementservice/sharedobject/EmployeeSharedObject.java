@@ -13,5 +13,6 @@ public class EmployeeSharedObject {
     private Long employeeId;
     private String phoneNumber;
     private String emailId;
+    private String newPassword;
 
 }

@@ -4,7 +4,9 @@ import com.collabera.hotelmanagementservice.entities.Employee;
 import com.collabera.hotelmanagementservice.sharedobject.EmployeeSharedObject;
 import com.collabera.hotelmanagementservice.sharedobject.UserLoginSharedObject;
 import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EmployeeSharedObjectTransformer {
     public EmployeeSharedObject transfer(Employee employee){
 
